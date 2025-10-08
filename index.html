@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HyperFoundation - Trusted Partners in Digital Growth</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .font-playfair { font-family: 'Playfair Display', serif; }
-        .font-inter { font-family: 'Inter', sans-serif; }
-        
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+
         .gradient-bg {
             background: linear-gradient(135deg, #0A2A2A 0%, #1A4A4A 50%, #0A2A2A 100%);
         }
-        
+
         .accent-color {
             color: #66E0C2;
         }
-        
+
         .accent-bg {
             background-color: #66E0C2;
         }
-        
+
         .ticker-container {
             overflow: hidden;
             white-space: nowrap;
         }
-        
+
         .ticker-content {
             display: inline-block;
             animation: scroll 30s linear infinite;
         }
-        
+
         @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
         }
-        
+
         .floating-shapes {
             position: absolute;
             width: 100%;
@@ -45,14 +58,14 @@
             overflow: hidden;
             pointer-events: none;
         }
-        
+
         .shape {
             position: absolute;
             border-radius: 50%;
             background: rgba(102, 224, 194, 0.1);
             animation: float 6s ease-in-out infinite;
         }
-        
+
         .shape:nth-child(1) {
             width: 80px;
             height: 80px;
@@ -60,7 +73,7 @@
             left: 10%;
             animation-delay: 0s;
         }
-        
+
         .shape:nth-child(2) {
             width: 120px;
             height: 120px;
@@ -68,7 +81,7 @@
             right: 15%;
             animation-delay: 2s;
         }
-        
+
         .shape:nth-child(3) {
             width: 60px;
             height: 60px;
@@ -76,38 +89,759 @@
             left: 80%;
             animation-delay: 4s;
         }
-        
+
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
         }
-        
+
         .card-hover {
             transition: all 0.3s ease;
         }
-        
+
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(102, 224, 194, 0.2);
         }
-        
+
         .icon-bounce {
             animation: bounce 2s infinite;
         }
-        
+
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
                 transform: translateY(0);
             }
+
             40% {
                 transform: translateY(-10px);
             }
+
             60% {
                 transform: translateY(-5px);
             }
         }
+
+        /* stack section  */
+            /* Animated Background */
+            body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 206, 209, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(72, 209, 204, 0.06) 0%, transparent 50%),
+                linear-gradient(135deg, #0a1f1f 0%, #1a3d3d 50%, #0a1f1f 100%);
+            z-index: -1;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Title Section */
+        .title {
+            text-align: center;
+            font-size: 4rem;
+            margin-bottom: 120px;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            position: relative;
+            animation: fadeInDown 1s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .title .hyper {
+            font-style: italic;
+            background: linear-gradient(135deg, #00CED1 0%, #48D1CC 50%, #5FFBF1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 400;
+        }
+
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00CED1, transparent);
+        }
+
+        /* Main Stack Wrapper */
+        .stack-wrapper {
+            display: grid;
+            grid-template-columns: 320px 1fr 320px;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 80px;
+            animation: fadeIn 1.2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Text Sections */
+        .text-left, .text-right {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #c0d0d0;
+        }
+
+        .text-section-top {
+            margin-bottom: 150px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            border: 1px solid rgba(102, 224, 194, 0.3);
+            backdrop-filter: blur(15px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .text-section-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(102, 224, 194, 0.05) 0%, 
+                transparent 50%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .text-section-top:hover::before {
+            opacity: 1;
+        }
+
+        .text-section-top:hover {
+            background: rgba(0, 0, 0, 0.5);
+            border-color: rgba(102, 224, 194, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(102, 224, 194, 0.15),
+                inset 0 1px 0 rgba(102, 224, 194, 0.2);
+        }
+
+        .text-section-bottom {
+            margin-top: 150px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 20px;
+            border: 1px solid rgba(102, 224, 194, 0.3);
+            backdrop-filter: blur(15px);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .text-section-bottom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(102, 224, 194, 0.05) 0%, 
+                transparent 50%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .text-section-bottom:hover::before {
+            opacity: 1;
+        }
+
+        .text-section-bottom:hover {
+            background: rgba(0, 0, 0, 0.5);
+            border-color: rgba(102, 224, 194, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 
+                0 15px 40px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(102, 224, 194, 0.15),
+                inset 0 1px 0 rgba(102, 224, 194, 0.2);
+        }
+
+        .section-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #66E0C2;
+            margin-bottom: 18px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, #66E0C2, transparent);
+        }
+
+        .text-section-top p,
+        .text-section-bottom p {
+            margin-bottom: 14px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .text-section-top p:last-child,
+        .text-section-bottom p:last-child {
+            margin-bottom: 0;
+        }
+
+        .text-section-top p strong,
+        .text-section-bottom p strong {
+            color: #66E0C2;
+            font-weight: 600;
+        }
+
+        /* 3D Stack Visualization */
+        .stack-visual {
+            perspective: 2000px;
+            height: 600px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .isometric-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: floatAnimation 6s ease-in-out infinite;
+        }
+
+        @keyframes floatAnimation {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Base Platform */
+        .base-platform {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) rotateX(75deg);
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(30, 70, 70, 0.3) 0%, rgba(20, 60, 60, 0.5) 100%);
+            border: 2px solid rgba(0, 206, 209, 0.2);
+            border-radius: 50%;
+            box-shadow: 
+                0 40px 100px rgba(0, 0, 0, 0.9),
+                inset 0 0 60px rgba(0, 206, 209, 0.05);
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 
+                    0 40px 100px rgba(0, 0, 0, 0.9),
+                    inset 0 0 60px rgba(0, 206, 209, 0.05);
+            }
+            50% {
+                box-shadow: 
+                    0 40px 120px rgba(0, 206, 209, 0.2),
+                    inset 0 0 80px rgba(0, 206, 209, 0.1);
+            }
+        }
+
+        /* Layer Labels */
+        .layer-label {
+            position: absolute;
+            color: rgba(95, 251, 241, 0.8);
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 10;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-shadow: 0 2px 10px rgba(0, 206, 209, 0.5);
+        }
+
+        .layer-label.hypercore-label {
+            bottom: 220px;
+            left: -30px;
+        }
+
+        .layer-label.hyperbft-label {
+            bottom: 70px;
+            left: 60px;
+        }
+
+        .layer-label.hyperevm-label {
+            bottom: 70px;
+            right: 60px;
+        }
+
+        /* Bottom Layer - Pie Base */
+        .bottom-layer {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%) rotateX(75deg);
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .pie-slice {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+
+        .hyperbft-slice {
+            clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
+            background: linear-gradient(135deg, #1a4d4d 0%, #2d7070 100%);
+            border: 2px solid rgba(0, 206, 209, 0.4);
+            box-shadow: inset -5px -5px 20px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+        }
+
+        .hyperevm-slice {
+            clip-path: polygon(50% 50%, 0% 50%, 0% 100%, 50% 100%);
+            background: linear-gradient(135deg, #1a4d4d 0%, #2d7070 100%);
+            border: 2px solid rgba(0, 206, 209, 0.4);
+            box-shadow: inset 5px -5px 20px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+        }
+
+        /* Middle Layer - HyperCore */
+        .middle-cylinder {
+            position: absolute;
+            bottom: 200px;
+            left: 50%;
+            transform: translateX(-50%) rotateX(75deg);
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #20B2AA 0%, #00CED1 50%, #48D1CC 100%);
+            box-shadow: 
+                0 30px 80px rgba(0, 206, 209, 0.5),
+                inset 0 -15px 40px rgba(0, 0, 0, 0.4),
+                inset 0 5px 20px rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            animation: rotateGlow 8s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            0%, 100% {
+                box-shadow: 
+                    0 30px 80px rgba(0, 206, 209, 0.5),
+                    inset 0 -15px 40px rgba(0, 0, 0, 0.4),
+                    inset 0 5px 20px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                box-shadow: 
+                    0 30px 100px rgba(0, 206, 209, 0.7),
+                    inset 0 -15px 40px rgba(0, 0, 0, 0.4),
+                    inset 0 5px 30px rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        .middle-cylinder::before {
+            content: 'HyperCore';
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #0a1f1f;
+            transform: rotateX(-75deg);
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+            letter-spacing: 0.05em;
+        }
+
+        /* Top Layer - Application Cylinders */
+        .app-columns {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 650px;
+            height: 280px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .app-cylinder {
+            position: relative;
+            width: 60px;
+            transform-style: preserve-3d;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .app-cylinder:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .app-cylinder:hover .cylinder-body {
+            box-shadow: 
+                inset -5px 0 15px rgba(0, 0, 0, 0.5),
+                inset 5px 0 15px rgba(255, 255, 255, 0.3),
+                0 15px 40px rgba(0, 206, 209, 0.6);
+        }
+
+        /* Cylinder top */
+        .cylinder-top {
+            width: 100%;
+            height: 24px;
+            background: radial-gradient(ellipse at center, #7FFFD4 0%, #5FFBF1 40%, #40E0D0 100%);
+            border-radius: 50%;
+            transform: rotateX(75deg) translateZ(2px);
+            box-shadow: 
+                0 4px 12px rgba(0, 206, 209, 0.6),
+                inset 0 -2px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .cylinder-top::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            width: 60%;
+            height: 40%;
+            background: radial-gradient(ellipse, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        /* Cylinder body */
+        .cylinder-body {
+            width: 100%;
+            background: linear-gradient(90deg, 
+                #1fb8aa 0%, 
+                #2dd4bf 20%,
+                #40E0D0 40%, 
+                #48D1CC 60%, 
+                #40E0D0 80%,
+                #1fb8aa 100%);
+            box-shadow: 
+                inset -5px 0 12px rgba(0, 0, 0, 0.5),
+                inset 5px 0 12px rgba(255, 255, 255, 0.25),
+                0 10px 30px rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .cylinder-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #0a1f1f;
+            text-align: center;
+            padding: 8px;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            letter-spacing: 0.05em;
+            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Heights */
+        .h-80 { height: 90px; }
+        .h-100 { height: 110px; }
+        .h-120 { height: 130px; }
+        .h-140 { height: 160px; }
+        .h-160 { height: 180px; }
+
+        /* Stats Section */
+        .stats-section {
+            margin-top: 100px;
+            padding: 50px 60px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            border: 1px solid rgba(0, 206, 209, 0.2);
+            backdrop-filter: blur(20px);
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+            gap: 40px;
+            align-items: center;
+            animation: fadeInUp 1.5s ease;
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .stats-section:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(0, 206, 209, 0.4);
+            box-shadow: 
+                0 15px 60px rgba(0, 206, 209, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(95, 251, 241, 0.8);
+            margin-bottom: 12px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: capitalize;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff 0%, #c0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 2px 20px rgba(255, 255, 255, 0.1);
+            animation: numberGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes numberGlow {
+            0%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.1);
+            }
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 80px;
+            background: linear-gradient(
+                to bottom,
+                transparent 0%,
+                rgba(0, 206, 209, 0.3) 20%,
+                rgba(0, 206, 209, 0.5) 50%,
+                rgba(0, 206, 209, 0.3) 80%,
+                transparent 100%
+            );
+            position: relative;
+        }
+
+        .stat-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 6px;
+            height: 6px;
+            background: #5FFBF1;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(95, 251, 241, 0.8);
+        }
+
+        /* User Section */
+        .user_section {
+            margin-top: 100px;
+            padding: 60px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            border: 1px solid rgba(0, 206, 209, 0.15);
+            backdrop-filter: blur(20px);
+            text-align: center;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1400px) {
+            .stack-wrapper {
+                grid-template-columns: 280px 1fr 280px;
+                gap: 50px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .stack-wrapper {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .title {
+                font-size: 3rem;
+                margin-bottom: 80px;
+            }
+
+            .text-section-top {
+                margin-bottom: 50px;
+            }
+
+            .text-section-bottom {
+                margin-top: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 40px 15px;
+            }
+
+            .title {
+                font-size: 2.2rem;
+                margin-bottom: 60px;
+            }
+
+            .stack-visual {
+                height: 450px;
+            }
+
+            .app-columns {
+                width: 95%;
+                gap: 6px;
+            }
+
+            .app-cylinder {
+                width: 48px;
+            }
+
+            .cylinder-label {
+                font-size: 0.6rem;
+            }
+
+            .base-platform {
+                width: 400px;
+                height: 400px;
+            }
+
+            .middle-cylinder {
+                width: 240px;
+                height: 240px;
+            }
+
+            .bottom-layer {
+                width: 320px;
+                height: 320px;
+            }
+
+            .user_section {
+                padding: 40px 20px;
+            }
+
+            .stats-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 40px 30px;
+            }
+
+            .stat-divider {
+                display: none;
+            }
+
+            .stat-value {
+                font-size: 2rem;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .stats-section {
+                grid-template-columns: 1fr auto 1fr;
+                gap: 30px;
+            }
+
+            .stat-divider:nth-child(4),
+            .stat-divider:nth-child(6) {
+                display: none;
+            }
+
+            .stat-card:nth-child(5),
+            .stat-card:nth-child(7) {
+                grid-column: span 3;
+            }
+        }
+      
+          
+      
     </style>
 </head>
+
 <body class="font-inter bg-gray-900 text-white">
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-800">
@@ -123,14 +857,19 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <a href="#features" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Features</a>
-                        <a href="#performance" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Performance</a>
-                        <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#home"
+                            class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#features"
+                            class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                        <a href="#performance"
+                            class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Performance</a>
+                        <a href="#about"
+                            class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <button class="bg-transparent border border-accent-color text-accent-color px-4 py-2 rounded-lg hover:bg-accent-color hover:text-gray-900 transition-colors">
+                    <button
+                        class="bg-transparent border border-accent-color text-accent-color px-4 py-2 rounded-lg hover:bg-accent-color hover:text-gray-900 transition-colors">
                         Sign In
                     </button>
                     <button class="accent-bg text-gray-900 px-4 py-2 rounded-lg hover:bg-opacity-90 transition-colors">
@@ -148,7 +887,7 @@
             <div class="shape"></div>
             <div class="shape"></div>
         </div>
-        
+
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="mb-8">
                 <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mx-auto mb-6">
@@ -162,13 +901,15 @@
                     We make the digital coin journey simple, supportive, and community driven.
                 </p>
             </div>
-            
+
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="accent-bg text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105">
+                <button
+                    class="accent-bg text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105">
                     <i class="fas fa-chart-line mr-2"></i>
                     Start Trading
                 </button>
-                <button class="border-2 border-accent-color text-accent-color px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent-color hover:text-gray-900 transition-all transform hover:scale-105">
+                <button
+                    class="border-2 border-accent-color text-accent-color px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent-color hover:text-gray-900 transition-all transform hover:scale-105">
                     <i class="fas fa-robot mr-2"></i>
                     Explore Bots
                 </button>
@@ -184,12 +925,13 @@
                     The flagship application: the premier <span class="accent-color">DECENTRALISED</span> exchange
                 </h2>
             </div>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-7 gap-8 items-center h-4/5">
                 <!-- Left Features -->
                 <div class="lg:col-span-2 space-y-12">
                     <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 border-2 border-accent-color rounded-full flex items-center justify-center flex-shrink-0">
+                        <div
+                            class="w-12 h-12 border-2 border-accent-color rounded-full flex items-center justify-center flex-shrink-0">
                             <div class="w-6 h-6 border-2 border-accent-color rounded-full"></div>
                         </div>
                         <div>
@@ -197,9 +939,10 @@
                             <p class="text-gray-600">Zero gas and low fees on all orders.</p>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 border-2 border-accent-color rounded-full flex items-center justify-center flex-shrink-0">
+                        <div
+                            class="w-12 h-12 border-2 border-accent-color rounded-full flex items-center justify-center flex-shrink-0">
                             <div class="w-4 h-4 border-2 border-accent-color transform rotate-45"></div>
                         </div>
                         <div>
@@ -208,26 +951,30 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Central Application Screenshot - বড় করা হয়েছে -->
                 <div class="lg:col-span-3 middle_image flex items-center justify-center" style="height: 100%;">
-                    <img src="./Screenshot_15.png" alt="Hyperliquid Screenshot" style="width: 100%; height: 100%; object-fit: contain;">
+                    <img src="./Screenshot_15.png" alt="Hyperliquid Screenshot"
+                        style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
-                
+
                 <!-- Right Features -->
                 <div class="lg:col-span-2 space-y-12">
                     <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 border-2 border-accent-color rounded-full flex items-center justify-center flex-shrink-0">
+                        <div
+                            class="w-12 h-12 border-2 border-accent-color rounded-full flex items-center justify-center flex-shrink-0">
                             <i class="fas fa-eye text-accent-color"></i>
                         </div>
                         <div>
                             <h3 class="text-xl font-bold mb-2 accent-color">Transparent</h3>
-                            <p class="text-gray-600">Fully onchain order book. Trades, funding, and liquidations all happen on the Hyperliquid L1.</p>
+                            <p class="text-gray-600">Fully onchain order book. Trades, funding, and liquidations all
+                                happen on the Hyperliquid L1.</p>
                         </div>
                     </div>
-                    
+
                     <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 border-2 border-accent-color rounded-full flex items-center justify-center flex-shrink-0">
+                        <div
+                            class="w-12 h-12 border-2 border-accent-color rounded-full flex items-center justify-center flex-shrink-0">
                             <i class="fas fa-forward text-accent-color"></i>
                         </div>
                         <div>
@@ -240,98 +987,140 @@
         </div>
     </section>
 
-    <!-- Hyperliquid Stack Section -->
-    <section class="py-20" style="background: linear-gradient(135deg, #0A2A2A 0%, #1A4A4A 50%, #0A2A2A 100%);">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-playfair font-bold mb-6 text-white">The Hyperliquid Stack</h2>
-            </div>
-            
-            <!-- Stack Visualization -->
-            <div class="relative flex justify-center items-center min-h-[600px]">
-                <!-- Base Layer - HyperBFT & HyperEVM -->
-                <div class="absolute bottom-0 flex space-x-8">
-                    <div class="bg-gray-800 p-6 rounded-lg shadow-2xl transform -rotate-12" style="width: 200px; height: 80px;">
-                        <h3 class="text-white font-bold text-center">HyperBFT</h3>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-lg shadow-2xl transform rotate-12" style="width: 200px; height: 80px;">
-                        <h3 class="text-white font-bold text-center">HyperEVM</h3>
-                    </div>
+
+    <!-- stack section -->
+    <div class="container">
+        <h1 class="title">The <span class="hyper">Hyperliquid</span> Stack</h1>
+        
+        <div class="stack-wrapper">
+            <!-- Left Text -->
+            <div class="text-left">
+                <div class="text-section-top">
+                    <p>Perps and spot order books are two flagship applications built on HyperCore. But they are just the tip of the iceberg.</p>
                 </div>
-                
-                <!-- Middle Layer - HyperCore -->
-                <div class="absolute bottom-20 bg-accent-color p-8 rounded-lg shadow-2xl transform -rotate-3" style="width: 400px; height: 100px;">
-                    <h3 class="text-gray-900 font-bold text-center text-xl">HyperCore</h3>
-                </div>
-                
-                <!-- Top Layer - Applications -->
-                <div class="absolute top-20 flex space-x-4">
-                    <!-- Left Group -->
-                    <div class="flex flex-col space-y-2">
-                        <div class="bg-accent-color/80 p-4 rounded shadow-lg" style="width: 80px; height: 60px;">
-                            <span class="text-gray-900 font-semibold text-xs">Oracles</span>
-                        </div>
-                        <div class="bg-accent-color/80 p-4 rounded shadow-lg" style="width: 80px; height: 40px;">
-                            <span class="text-gray-900 font-semibold text-xs">Spot</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Middle Group -->
-                    <div class="flex flex-col space-y-2">
-                        <div class="bg-accent-color/80 p-4 rounded shadow-lg" style="width: 80px; height: 60px;">
-                            <span class="text-gray-900 font-semibold text-xs">Perps</span>
-                        </div>
-                        <div class="bg-accent-color/80 p-4 rounded shadow-lg" style="width: 80px; height: 40px;">
-                            <span class="text-gray-900 font-semibold text-xs">Borrowing & Lending</span>
-                        </div>
-                        <div class="bg-accent-color/80 p-4 rounded shadow-lg" style="width: 80px; height: 40px;">
-                            <span class="text-gray-900 font-semibold text-xs">Auctions</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Right Group -->
-                    <div class="flex flex-col space-y-2">
-                        <div class="bg-accent-color/80 p-4 rounded shadow-lg" style="width: 80px; height: 60px;">
-                            <span class="text-gray-900 font-semibold text-xs">Vaults</span>
-                        </div>
-                        <div class="bg-accent-color/80 p-4 rounded shadow-lg" style="width: 80px; height: 40px;">
-                            <span class="text-gray-900 font-semibold text-xs">Governance</span>
-                        </div>
-                        <div class="bg-accent-color/80 p-4 rounded shadow-lg" style="width: 80px; height: 40px;">
-                            <span class="text-gray-900 font-semibold text-xs">Native Stablecoins</span>
-                        </div>
-                        <div class="bg-accent-color/80 p-4 rounded shadow-lg" style="width: 80px; height: 40px;">
-                            <span class="text-gray-900 font-semibold text-xs">Bridges</span>
-                        </div>
-                        <div class="bg-accent-color/80 p-4 rounded shadow-lg" style="width: 80px; height: 60px;">
-                            <span class="text-gray-900 font-semibold text-xs">And More Applications</span>
-                        </div>
-                    </div>
+                <div class="text-section-bottom">
+                    <p>User-built applications on the HyperEVM interact seamlessly with HyperCore to let anyone use apps, launch tokens, and trade, all in one place.</p>
                 </div>
             </div>
-            
-            <!-- Description Text -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
-                <div class="bg-gray-800/50 p-6 rounded-lg">
-                    <p class="text-gray-300 mb-4">
-                        <strong class="text-accent-color">Perps and spot order books</strong> are two flagship applications built on HyperCore. But they are just the tip of the iceberg.
-                    </p>
-                    <p class="text-gray-300">
-                        <strong class="text-accent-color">User-built applications</strong> on the HyperEVM interact seamlessly with HyperCore to let anyone use apps, launch tokens, and trade, all in one place.
-                    </p>
+
+            <!-- 3D Stack Visualization -->
+            <div class="stack-visual">
+                <div class="isometric-container">
+                    <!-- Base Platform -->
+                    <div class="base-platform"></div>
+
+                    <!-- Layer Labels -->
+                    <div class="layer-label hypercore-label">HyperCore</div>
+                    <div class="layer-label hyperbft-label">HyperBFT</div>
+                    <div class="layer-label hyperevm-label">HyperEVM</div>
+
+                    <!-- Bottom Layer -->
+                    <div class="bottom-layer">
+                        <div class="pie-slice hyperbft-slice"></div>
+                        <div class="pie-slice hyperevm-slice"></div>
+                    </div>
+
+                    <!-- Middle Layer -->
+                    <div class="middle-cylinder"></div>
+
+                    <!-- Top Layer -->
+                    <div class="app-columns">
+                        <div class="app-cylinder">
+                            <div class="cylinder-top"></div>
+                            <div class="cylinder-body h-100">
+                                <span class="cylinder-label">Oracles</span>
+                            </div>
+                        </div>
+                        <div class="app-cylinder">
+                            <div class="cylinder-top"></div>
+                            <div class="cylinder-body h-140">
+                                <span class="cylinder-label">Perps</span>
+                            </div>
+                        </div>
+                        <div class="app-cylinder">
+                            <div class="cylinder-top"></div>
+                            <div class="cylinder-body h-80">
+                                <span class="cylinder-label">Spot</span>
+                            </div>
+                        </div>
+                        <div class="app-cylinder">
+                            <div class="cylinder-top"></div>
+                            <div class="cylinder-body h-160">
+                                <span class="cylinder-label">Vaults</span>
+                            </div>
+                        </div>
+                        <div class="app-cylinder">
+                            <div class="cylinder-top"></div>
+                            <div class="cylinder-body h-120">
+                                <span class="cylinder-label">Borrowing & Lending</span>
+                            </div>
+                        </div>
+                        <div class="app-cylinder">
+                            <div class="cylinder-top"></div>
+                            <div class="cylinder-body h-100">
+                                <span class="cylinder-label">Auctions</span>
+                            </div>
+                        </div>
+                        <div class="app-cylinder">
+                            <div class="cylinder-top"></div>
+                            <div class="cylinder-body h-140">
+                                <span class="cylinder-label">Governance</span>
+                            </div>
+                        </div>
+                        <div class="app-cylinder">
+                            <div class="cylinder-top"></div>
+                            <div class="cylinder-body h-160">
+                                <span class="cylinder-label">Native Stablecoins</span>
+                            </div>
+                        </div>
+                        <div class="app-cylinder">
+                            <div class="cylinder-top"></div>
+                            <div class="cylinder-body h-140">
+                                <span class="cylinder-label">And More Applications</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="bg-gray-800/50 p-6 rounded-lg">
-                    <p class="text-gray-300 mb-4">
-                        <strong class="text-accent-color">High performance applications</strong> are built natively. These financial primitives on HyperCore are accessible to user-built applications on the general-purpose HyperEVM, which supports familiar Ethereum tooling.
-                    </p>
-                    <p class="text-gray-300">
-                        <strong class="text-accent-color">The foundation</strong> of the Hyperliquid blockchain is HyperBFT consensus, which lets a disparate set of nodes agree on the state of the world.
-                    </p>
+            </div>
+
+            <!-- Right Text -->
+            <div class="text-right">
+                <div class="text-section-top">
+                    <h3 class="section-title">High Performance Architecture</h3>
+                    <p><strong>High performance applications</strong> are built natively. These financial primitives on HyperCore are accessible to user-built applications on the general-purpose HyperEVM, which supports familiar Ethereum tooling.</p>
+                    <p>The HyperEVM and HyperCore exist as one unified state, unlocking applications that simultaneously require performance, liquidity, and programmability.</p>
+                </div>
+                <div class="text-section-bottom">
+                    <h3 class="section-title">Consensus Foundation</h3>
+                    <p><strong>The foundation</strong> of the Hyperliquid blockchain is HyperBFT consensus, which lets a disparate set of nodes agree on the state of the world.</p>
+                    <p>The state comprises all applications, both those built on HyperCore and the HyperEVM.</p>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Stats Section -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-label">Block time</div>
+                <div class="stat-value">0.07 seconds</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+                <div class="stat-label">Users</div>
+                <div class="stat-value">1,033,559</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+                <div class="stat-label">Max TPS</div>
+                <div class="stat-value">200,000</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-card">
+                <div class="stat-label">Daily volume</div>
+                <div class="stat-value">$16B</div>
+            </div>
+        </div>
+    </div>
 
     <!-- How We Work With You -->
     <section class="py-20 bg-gray-900">
@@ -342,16 +1131,17 @@
                     Our approach to partnership ensures your success in the digital trading ecosystem
                 </p>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-700 p-8 rounded-xl">
                     <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-handshake text-gray-900 text-2xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 accent-color">Partnership</h3>
-                    <p class="text-gray-400">We work alongside you as true partners, sharing knowledge and resources for mutual growth.</p>
+                    <p class="text-gray-400">We work alongside you as true partners, sharing knowledge and resources for
+                        mutual growth.</p>
                 </div>
-                
+
                 <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-700 p-8 rounded-xl">
                     <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-search text-gray-900 text-2xl"></i>
@@ -359,21 +1149,23 @@
                     <h3 class="text-2xl font-bold mb-4 accent-color">Transparency</h3>
                     <p class="text-gray-400">Complete visibility into our processes, fees, and performance metrics.</p>
                 </div>
-                
+
                 <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-700 p-8 rounded-xl">
                     <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-trophy text-gray-900 text-2xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 accent-color">Real-World Results</h3>
-                    <p class="text-gray-400">Proven track record with measurable outcomes and consistent performance.</p>
+                    <p class="text-gray-400">Proven track record with measurable outcomes and consistent performance.
+                    </p>
                 </div>
-                
+
                 <div class="card-hover bg-gradient-to-br from-gray-800 to-gray-700 p-8 rounded-xl">
                     <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-clock text-gray-900 text-2xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4 accent-color">Consistency</h3>
-                    <p class="text-gray-400">Reliable service delivery and consistent support across all our offerings.</p>
+                    <p class="text-gray-400">Reliable service delivery and consistent support across all our offerings.
+                    </p>
                 </div>
             </div>
         </div>
@@ -388,7 +1180,7 @@
                     Our comprehensive approach to digital asset management
                 </p>
             </div>
-            
+
             <div class="bg-gray-700 rounded-2xl p-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     <div class="text-center">
@@ -398,7 +1190,7 @@
                         <h3 class="text-xl font-bold mb-2 accent-color">Regulated</h3>
                         <p class="text-gray-400 text-sm">Compliant with all regulatory requirements</p>
                     </div>
-                    
+
                     <div class="text-center">
                         <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-users-cog text-gray-900 text-2xl"></i>
@@ -406,7 +1198,7 @@
                         <h3 class="text-xl font-bold mb-2 accent-color">Partnership</h3>
                         <p class="text-gray-400 text-sm">Collaborative approach to success</p>
                     </div>
-                    
+
                     <div class="text-center">
                         <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-chart-line text-gray-900 text-2xl"></i>
@@ -414,7 +1206,7 @@
                         <h3 class="text-xl font-bold mb-2 accent-color">Consistency</h3>
                         <p class="text-gray-400 text-sm">Steady and reliable performance</p>
                     </div>
-                    
+
                     <div class="text-center">
                         <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-bolt text-gray-900 text-2xl"></i>
@@ -422,7 +1214,7 @@
                         <h3 class="text-xl font-bold mb-2 accent-color">Real-Time Control</h3>
                         <p class="text-gray-400 text-sm">Instant monitoring and adjustments</p>
                     </div>
-                    
+
                     <div class="text-center">
                         <div class="w-16 h-16 accent-bg rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fas fa-seedling text-gray-900 text-2xl"></i>
@@ -444,42 +1236,48 @@
                     Advanced trading automation with complete transparency
                 </p>
             </div>
-            
+
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <div class="space-y-8">
                         <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 accent-bg rounded-full flex items-center justify-center flex-shrink-0">
+                            <div
+                                class="w-12 h-12 accent-bg rounded-full flex items-center justify-center flex-shrink-0">
                                 <i class="fas fa-eye text-gray-900"></i>
                             </div>
                             <div>
                                 <h3 class="text-2xl font-bold mb-2 accent-color">Transparency</h3>
-                                <p class="text-gray-400">Complete visibility into all trading activities, strategies, and performance metrics.</p>
+                                <p class="text-gray-400">Complete visibility into all trading activities, strategies,
+                                    and performance metrics.</p>
                             </div>
                         </div>
-                        
+
                         <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 accent-bg rounded-full flex items-center justify-center flex-shrink-0">
+                            <div
+                                class="w-12 h-12 accent-bg rounded-full flex items-center justify-center flex-shrink-0">
                                 <i class="fas fa-robot text-gray-900"></i>
                             </div>
                             <div>
                                 <h3 class="text-2xl font-bold mb-2 accent-color">Dual Bots</h3>
-                                <p class="text-gray-400">Advanced AI-powered trading bots that work in tandem for optimal results.</p>
+                                <p class="text-gray-400">Advanced AI-powered trading bots that work in tandem for
+                                    optimal results.</p>
                             </div>
                         </div>
-                        
+
                         <div class="flex items-start space-x-4">
-                            <div class="w-12 h-12 accent-bg rounded-full flex items-center justify-center flex-shrink-0">
+                            <div
+                                class="w-12 h-12 accent-bg rounded-full flex items-center justify-center flex-shrink-0">
                                 <i class="fas fa-key text-gray-900"></i>
                             </div>
                             <div>
                                 <h3 class="text-2xl font-bold mb-2 accent-color">Smart Access</h3>
-                                <p class="text-gray-400">Intelligent access controls that adapt to market conditions and user preferences.</p>
+                                <p class="text-gray-400">Intelligent access controls that adapt to market conditions and
+                                    user preferences.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="bg-gray-800 rounded-2xl p-8">
                     <h3 class="text-2xl font-bold mb-6 accent-color">Live Performance</h3>
                     <div class="space-y-4">
@@ -522,9 +1320,10 @@
                 <span class="accent-color">AVAX-SWAP Long 134 +78.45%</span>
             </div>
         </div>
-        
+
         <div class="text-center mt-8">
-            <button class="accent-bg text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-colors">
+            <button
+                class="accent-bg text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-colors">
                 <i class="fas fa-chart-bar mr-2"></i>
                 View Full Bot Performance Report
             </button>
@@ -542,13 +1341,15 @@
             <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
                 Join thousands of traders who trust our automated solutions for consistent, profitable trading.
             </p>
-            
+
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="accent-bg text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105">
+                <button
+                    class="accent-bg text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-opacity-90 transition-all transform hover:scale-105">
                     <i class="fas fa-user-plus mr-2"></i>
                     Sign Up Now
                 </button>
-                <button class="border-2 border-accent-color text-accent-color px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent-color hover:text-gray-900 transition-all transform hover:scale-105">
+                <button
+                    class="border-2 border-accent-color text-accent-color px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent-color hover:text-gray-900 transition-all transform hover:scale-105">
                     <i class="fas fa-robot mr-2"></i>
                     Explore Bots
                 </button>
@@ -568,24 +1369,29 @@
                         <span class="text-xl font-bold">HyperFoundation</span>
                     </div>
                     <p class="text-gray-400 mb-6 max-w-md">
-                        Trusted partners in digital growth, making the digital coin journey simple, supportive, and community driven.
+                        Trusted partners in digital growth, making the digital coin journey simple, supportive, and
+                        community driven.
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent-color hover:text-gray-900 transition-colors">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent-color hover:text-gray-900 transition-colors">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent-color hover:text-gray-900 transition-colors">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent-color hover:text-gray-900 transition-colors">
                             <i class="fab fa-discord"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent-color hover:text-gray-900 transition-colors">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent-color hover:text-gray-900 transition-colors">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent-color hover:text-gray-900 transition-colors">
+                        <a href="#"
+                            class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-accent-color hover:text-gray-900 transition-colors">
                             <i class="fab fa-telegram"></i>
                         </a>
                     </div>
                 </div>
-                
+
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Company</h3>
                     <ul class="space-y-2">
@@ -595,18 +1401,20 @@
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Legal</h3>
                     <ul class="space-y-2">
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Code of Conduct</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                        </li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Code of Conduct</a>
+                        </li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Copyright</a></li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 text-sm">
                     © 2024 HyperFoundation. All rights reserved.
@@ -636,7 +1444,7 @@
         });
 
         // Add scroll effect to navigation
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const nav = document.querySelector('nav');
             if (window.scrollY > 100) {
                 nav.classList.add('bg-gray-900');
@@ -653,7 +1461,7 @@
             rootMargin: '0px 0px -50px 0px'
         };
 
-        const observer = new IntersectionObserver(function(entries) {
+        const observer = new IntersectionObserver(function (entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate-fade-in');
@@ -687,4 +1495,5 @@
         document.head.appendChild(style);
     </script>
 </body>
+
 </html>
