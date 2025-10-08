@@ -163,6 +163,7 @@
         .container {
             max-width: 1600px;
             margin: 0 auto;
+            background: #072724;
         }
 
         /* Title Section */
@@ -216,7 +217,7 @@
             align-items: center;
             margin-bottom: 80px;
             animation: fadeIn 1.2s ease;
-            background: #072724;
+            background: #072723;
         }
 
         @keyframes fadeIn {
@@ -699,7 +700,7 @@
         /* Stats Section */
         .stats-section {
             margin-top: 100px;
-            padding: 20px 30px;
+            padding: 60px 40px;
             background: #072724;
             border-radius: 12px;
             border: 1px solid rgba(102, 224, 194, 0.15);
@@ -723,10 +724,10 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, 
-                rgba(102, 224, 194, 0.02) 0%, 
-                transparent 50%, 
-                rgba(102, 224, 194, 0.01) 100%);
+            background: linear-gradient(135deg,
+                    rgba(102, 224, 194, 0.02) 0%,
+                    transparent 50%,
+                    rgba(102, 224, 194, 0.01) 100%);
             pointer-events: none;
         }
 
@@ -751,7 +752,7 @@
         }
 
         .stat-label {
-            font-size: 14px;
+            font-size: 0.9rem;
             color: #66E0C2;
             margin-bottom: 8px;
             font-weight: 500;
@@ -760,7 +761,7 @@
         }
 
         .stat-value {
-            font-size: 24px;
+            font-size: 2.5rem;
             font-weight: 700;
             color: #FFFFFF;
             letter-spacing: -0.02em;
@@ -967,6 +968,179 @@
             .text-section-top,
             .text-section-bottom {
                 opacity: 0;
+            }
+        }
+
+        /* community section */
+        /* Add extra content for scrolling */
+        .spacer {
+            height: 100vh;
+            background: linear-gradient(to bottom, #f0fdf9, #ecfeff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #374151;
+        }
+
+        .community-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom right, #f0fdf9, #ecfeff);
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 2rem;
+        }
+
+        /* Animated Wave Border Pattern */
+        .wave-border {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            transition: transform 0.1s ease-out;
+        }
+
+        .wave-line {
+            position: absolute;
+            inset: 0;
+            border: 2px solid #5eead4;
+            opacity: 0.2;
+            animation: pulse 4s ease-in-out infinite;
+            transition: all 0.1s ease-out;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.15;
+            }
+
+            50% {
+                opacity: 0.25;
+            }
+        }
+
+        /* Top-left flowing waves (left side of heart) */
+        .wave-line:nth-child(1) {
+            border-radius: 40% 60% 70% 30% / 60% 40% 60% 40%;
+            animation-delay: 0s;
+        }
+
+        .wave-line:nth-child(2) {
+            border-radius: 42% 58% 68% 32% / 58% 42% 58% 42%;
+            animation-delay: 0.3s;
+        }
+
+        .wave-line:nth-child(3) {
+            border-radius: 44% 56% 66% 34% / 56% 44% 56% 44%;
+            animation-delay: 0.6s;
+        }
+
+        .wave-line:nth-child(4) {
+            border-radius: 46% 54% 64% 36% / 54% 46% 54% 46%;
+            animation-delay: 0.9s;
+        }
+
+        .wave-line:nth-child(5) {
+            border-radius: 48% 52% 62% 38% / 52% 48% 52% 48%;
+            animation-delay: 1.2s;
+        }
+
+        /* Right side flowing waves (right side of heart) */
+        .wave-line:nth-child(6) {
+            border-radius: 60% 40% 30% 70% / 40% 60% 40% 60%;
+            animation-delay: 0.2s;
+        }
+
+        .wave-line:nth-child(7) {
+            border-radius: 58% 42% 32% 68% / 42% 58% 42% 58%;
+            animation-delay: 0.5s;
+        }
+
+        .wave-line:nth-child(8) {
+            border-radius: 56% 44% 34% 66% / 44% 56% 44% 56%;
+            animation-delay: 0.8s;
+        }
+
+        .wave-line:nth-child(9) {
+            border-radius: 54% 46% 36% 64% / 46% 54% 46% 54%;
+            animation-delay: 1.1s;
+        }
+
+        .wave-line:nth-child(10) {
+            border-radius: 52% 48% 38% 62% / 48% 52% 48% 52%;
+            animation-delay: 1.4s;
+        }
+
+        /* Bottom center waves (bottom point of heart) */
+        .wave-line:nth-child(11) {
+            border-radius: 50% 50% 30% 70% / 30% 30% 70% 70%;
+            animation-delay: 0.4s;
+        }
+
+        .wave-line:nth-child(12) {
+            border-radius: 50% 50% 32% 68% / 32% 32% 68% 68%;
+            animation-delay: 0.7s;
+        }
+
+        .wave-line:nth-child(13) {
+            border-radius: 50% 50% 34% 66% / 34% 34% 66% 66%;
+            animation-delay: 1s;
+        }
+
+        .wave-line:nth-child(14) {
+            border-radius: 50% 50% 36% 64% / 36% 36% 64% 64%;
+            animation-delay: 1.3s;
+        }
+
+        /* Content Styling */
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 900px;
+            animation: fadeIn 1.5s ease-out;
+            transition: all 0.1s ease-out;
+            margin-top: 100px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.125rem;
+            color: #374151;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            line-height: 1.6;
+        }
+
+        .title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 400;
+            color: #111827;
+            font-family: Georgia, 'Times New Roman', serif;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        @media (max-width: 768px) {
+            .subtitle {
+                font-size: 1rem;
+                margin-bottom: 2rem;
             }
         }
     </style>
@@ -1269,7 +1443,107 @@
         </div>
     </div>
 
- 
+    <!-- Community First Section -->
+    <section class="community-section" id="communitySection">
+        <!-- Animated Heart-Shaped Wave Border Pattern -->
+        <div class="wave-border" id="waveBorder">
+            <div class="wave-line" data-index="0"></div>
+            <div class="wave-line" data-index="1"></div>
+            <div class="wave-line" data-index="2"></div>
+            <div class="wave-line" data-index="3"></div>
+            <div class="wave-line" data-index="4"></div>
+            <div class="wave-line" data-index="5"></div>
+            <div class="wave-line" data-index="6"></div>
+            <div class="wave-line" data-index="7"></div>
+            <div class="wave-line" data-index="8"></div>
+            <div class="wave-line" data-index="9"></div>
+            <div class="wave-line" data-index="10"></div>
+            <div class="wave-line" data-index="11"></div>
+            <div class="wave-line" data-index="12"></div>
+            <div class="wave-line" data-index="13"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="content" id="content">
+            <p class="subtitle">
+                No investors. No paid market makers. No fees to any company.
+            </p>
+            <h1 class="title">Community first.</h1>
+        </div>
+    </section>
+
+    <script>
+        const section = document.getElementById('communitySection');
+        const waveBorder = document.getElementById('waveBorder');
+        const content = document.getElementById('content');
+        const waveLines = document.querySelectorAll('.wave-line');
+
+        // Position configurations for each wave line
+        const positions = [
+            { tx: -30, ty: -30, scale: 0.8 },   // 1
+            { tx: -28, ty: -28, scale: 0.85 },  // 2
+            { tx: -26, ty: -26, scale: 0.9 },   // 3
+            { tx: -24, ty: -24, scale: 0.95 },  // 4
+            { tx: -22, ty: -22, scale: 1 },     // 5
+            { tx: 30, ty: -30, scale: 0.8 },    // 6
+            { tx: 28, ty: -28, scale: 0.85 },   // 7
+            { tx: 26, ty: -26, scale: 0.9 },    // 8
+            { tx: 24, ty: -24, scale: 0.95 },   // 9
+            { tx: 22, ty: -22, scale: 1 },      // 10
+            { tx: 0, ty: 30, scale: 0.8 },      // 11
+            { tx: 0, ty: 28, scale: 0.85 },     // 12
+            { tx: 0, ty: 26, scale: 0.9 },      // 13
+            { tx: 0, ty: 24, scale: 0.95 }      // 14
+        ];
+
+        function handleScroll() {
+            const rect = section.getBoundingClientRect();
+            const sectionTop = rect.top;
+            const sectionHeight = rect.height;
+            const windowHeight = window.innerHeight;
+
+            // Calculate scroll progress (0 to 1)
+            // Starts when section enters viewport, completes when it leaves
+            let progress = 0;
+
+            if (sectionTop < windowHeight && sectionTop > -sectionHeight) {
+                // Section is in viewport
+                progress = (windowHeight - sectionTop) / (windowHeight + sectionHeight);
+                progress = Math.max(0, Math.min(1, progress));
+            } else if (sectionTop <= -sectionHeight) {
+                progress = 1;
+            }
+
+            // Apply zoom and move up effect (zoom from 1 to 1.3, move up by 20%)
+            const zoomScale = 1 + (progress * 0.3);
+            const moveUp = progress * -20;
+
+            // Apply transformations to each wave line
+            waveLines.forEach((line, index) => {
+                const pos = positions[index];
+                const tx = pos.tx * (1 - progress * 0.3); // Move closer to center
+                const ty = pos.ty * (1 - progress * 0.3) + moveUp;
+                const scale = pos.scale * zoomScale;
+
+                line.style.transform = `translate(${tx}%, ${ty}%) scale(${scale})`;
+            });
+
+            // Also scale content slightly
+            content.style.transform = `translateY(${moveUp * 2}%) scale(${1 + progress * 0.1})`;
+        }
+
+        // Initial position setup
+        waveLines.forEach((line, index) => {
+            const pos = positions[index];
+            line.style.transform = `translate(${pos.tx}%, ${pos.ty}%) scale(${pos.scale})`;
+        });
+
+        // Listen to scroll events
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial call
+    </script>
+
+
 
     <script>
         // Smooth scrolling for navigation links
@@ -1285,6 +1559,40 @@
                 }
             });
         });
+
+        // Scroll-triggered wave animation
+        function animateWavesOnScroll() {
+            const communitySection = document.querySelector('.community-section');
+            const waveLines = document.querySelectorAll('.wave-line');
+
+            if (!communitySection || !waveLines.length) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Animate each wave line with staggered delay
+                        waveLines.forEach((line, index) => {
+                            setTimeout(() => {
+                                line.classList.add('animate-in');
+                            }, index * 100); // 100ms delay between each wave
+                        });
+                    } else {
+                        // Reset animation when out of view
+                        waveLines.forEach(line => {
+                            line.classList.remove('animate-in');
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.3, // Trigger when 30% of section is visible
+                rootMargin: '0px 0px -100px 0px'
+            });
+
+            observer.observe(communitySection);
+        }
+
+        // Initialize scroll animations when DOM is loaded
+        document.addEventListener('DOMContentLoaded', animateWavesOnScroll);
 
         // Add scroll effect to navigation
         window.addEventListener('scroll', function () {
